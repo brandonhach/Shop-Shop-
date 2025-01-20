@@ -6,7 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 	selector: 'app-root',
 	standalone: true,
 	imports: [RouterOutlet, HeaderComponent],
-	template: ` <app-header> <router-outlet /> </app-header> `,
+	template: ` <app-header /> <router-outlet />`,
 	styles: [],
 })
 export class AppComponent {
