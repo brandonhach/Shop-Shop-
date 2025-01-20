@@ -1,4 +1,43 @@
-<mat-toolbar class="max-w-7xl mx-auto border-x">
+<!-- Nav-bar -->
+<mat-toolbar class="max-w-full mx-auto border-x justify-between">
 	<a routerLink="">Shop Shop!</a>
-	<mat-icon>shopping_cart</mat-icon>
+	<!-- Shopping Cart -->
+	<button mat-button [matMenuTriggerFor]="menu">
+		<mat-icon [matBadge]="1" matBadgeColor="warn">shopping_cart</mat-icon>
+	</button>
+	<!-- Checkout Menu (Shopping Cart) -->
+	<mat-menu #menu="matMenu">
+		<div class="p-3 divide-y divide-solid">
+			<!-- Count -->
+			<div class="pb-3 flex justify-between">
+				<span class="mr-16">1 Items</span>
+				<a routerLink="cart">View Cart</a>
+			</div>
+			<!-- Item in Cart -->
+			<div class="py-3">
+				<div class="flex justify-between font-light mb-2">
+					Keyboard x 1 <span class="font-bold">${{ '150' }}</span>
+				</div>
+				<div class="flex justify-between font-light mb-2">
+					Keyboard x 1 <span class="font-bold">${{ '150' }}</span>
+				</div>
+				<div class="flex justify-between font-light mb-2">
+					Keyboard x 1 <span class="font-bold">${{ '150' }}</span>
+				</div>
+			</div>
+			<!-- Total -->
+			<div class="flex justify-between py-3 font-light">
+				Total: <span class="font-bold">${{ '450' }} </span>
+			</div>
+			<!-- Remove -->
+			<div class="pt-3 flex justify-between">
+				<button class="bg-rose-600 text-white rounded">
+					<mat-icon>remove_shopping_cart</mat-icon>
+				</button>
+				<button class="bg-green-600 text-white rounded">
+					<mat-icon>remove_shopping_cart</mat-icon>
+				</button>
+			</div>
+		</div>
+	</mat-menu>
 </mat-toolbar>
